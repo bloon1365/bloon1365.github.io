@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://bloon1365.github.io/sitemap.xml
