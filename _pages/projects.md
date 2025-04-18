@@ -5,7 +5,7 @@ permalink: /projects/
 description: A collection of some noteworthy projects.
 nav: true
 nav_order: 3
-display_categories: [Software, Hardware]
+display_categories: [Electrical, Mechanical, Software]
 horizontal: false
 ---
 
