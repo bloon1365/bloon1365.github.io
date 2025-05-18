@@ -1,7 +1,7 @@
 ---
 layout: page
 title: GPS Tracking Collar
-description: 
+description: A GPS tracking collar for bison. Team Project
 img: assets/img/Tracking Collar/1.jpg
 importance: 1
 category: 
@@ -50,7 +50,7 @@ All electrical parts were selected according to their price, power consumption a
 When we started on this project, Wright Collars had already developed a strap and housing design so our main task was to design a drop-off mechanism that could withstand the needed forces. 
 </p>
 
-<h3>Prototypes</h3>
+<h3>Drop Off Prototypes</h3>
 <p>
 Two prototypes were developed to ensure a working design would be achieved at the end of our capstone project. The first one is a pin style drop-off which we based off of competitors designs which is activated by a servo.
 </p>
@@ -96,7 +96,7 @@ We are currently in the Prototype Development/Testing phase, we are testing our 
 <h2>Additional Improvements and Future Plans</h2>
 <ol>
   <li><strong>Miniaturized System:</strong><br>
-    If we can shrink our drop-off and electronics enough this collar could also be used on smaller animals suck as wolves.</li>
+    If we can shrink our drop-off and electronics enough this collar could also be used on smaller animals such as wolves.</li>
   <li><strong>Battery Optimization:</strong><br>
     Testing will determine whether to use two or three LSH20 batteries based on real-world energy consumption data.</li>
 </ol>

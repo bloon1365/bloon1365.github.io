@@ -70,7 +70,7 @@ The blast door, made from 30mm steel, provides critical crew protection by isola
 </div>
 
 <h3>Pusher</h3>  
-The pusher utilizes a telescoping mechanism powered by ANSI chains and a hydraulic motor. Finite Element Analysis (FEA) confirmed the design's reliability under operational stress. This subsystem prioritizes compactness and performance in extreme environments.  
+The pusher utilizes a telescoping mechanism powered a hydraulic motor and uses chains. Finite Element Analysis (FEA) confirmed the design's reliability under operational stresses. This subsystem prioritizes compactness and performance in extreme environments.  
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">

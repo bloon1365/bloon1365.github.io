@@ -19,16 +19,22 @@ The goal of this project is to design and construct a custom drone capable of st
 
 <div class="row">
   <div class="col-sm mt-3 mt-md-0">   
-    {% include figure.html path="assets/img/Drone/1.png" title="example image" class="img-fluid rounded z-depth-1" %}
+    {% include figure.html path="assets/img/Drone/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
 
 <h2>Parts Selection</h2>
 <ol>
   <li><strong>Laser Cut Frame:</strong><br>
-    The frame of the drone will be precision-cut using laser technology. This ensures accuracy and consistency in the frame's dimensions, resulting in a sturdy yet lightweight structure. The material chosen for the frame will be wood for its strength-to-weight ratio and it's ease of cutting with a laser. </li>
+    The frame of the drone will be cut using a laser cutter. This ensures accuracy and consistency in the frame's dimensions, resulting in a sturdy yet lightweight structure. The material chosen for the frame will be wood for its strength-to-weight ratio and it's ease of cutting with a laser. </li>
   <li><strong>Custom 3D Printed Propellers:</strong><br>
-    Propellers are critical components of any drone, as they directly influence lift and thrust generation. Custom 3D printing allows for precise control over the design and optimization of propeller geometry, enabling efficient performance and reduced noise levels. The material will be PLA because of it's convenience despite it's unfavorable material properties</li>
+    Propellers are critical components of any drone, as they directly influence lift and thrust generation. Custom 3D printing allows for precise control over the design and optimization of propeller geometry, enabling efficient performance and reduced noise levels. The material will be PLA because of it's convenience despite it's unfavorable material properties
+    <div class="row">
+      <div class="col-sm mt-3 mt-md-0">   
+      {% include figure.html path="assets/img/Drone/2.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+      </div>
+    </div>
+  </li>
   <li><strong>Store Bought Flight Controller:</strong><br>
     To ensure stable flight and reliable control, a commercial flight controller will be integrated into the drone's electronics system. These controllers feature advanced algorithms for stabilization and navigation, providing a smooth flying experience. The selected flight controller will be compatible with various communication protocols and will interface with the selected motor controllers.</li>
   <li><strong>Flysky Radio/Receiver:</strong><br>
@@ -48,7 +54,14 @@ The goal of this project is to design and construct a custom drone capable of st
   <li><strong>Fabrication Phase:</strong><br>
     - Laser cutting of frame components.<br>
     - 3D printing of custom propellers.<br>
-    - Assembly of electronics and integration with the frame.</li>
+    - Assembly of electronics and integration with the frame.<br>
+    - Building a power supply to charge the LiPO<br>
+    <div class="row">
+      <div class="col-sm mt-3 mt-md-0">   
+      {% include figure.html path="assets/img/Drone/3.png" title="example image" class="img-fluid rounded z-depth-1" %}
+      </div>
+    </div>
+  </li>
   <li><strong>Testing and Calibration:</strong><br>
     - Correcting of motor positions and propeller directions.<br>
     - Initial flight tests to assess stability and control.<br>
