@@ -113,7 +113,7 @@ This project demonstrated the importance of a structured, modular approach in ta
 
 <h2>Additional Notes</h2>  
 
-Find the project report PDF attached <a href="assets/pdf/Tank Autoloader/1.pdf" download>here</a> as well as a <a href="assets/pdf/Tank Autoloader/BOM.pdf" download>BOM</a>.
+Find the project report PDF attached <a href="/assets/pdf/Tank Autoloader/1.pdf" download>here</a> as well as a <a href="/assets/pdf/Tank Autoloader/BOM.pdf" download>BOM</a>.
 The drawings for all manufactured parts are included at the end of the report. It's worth noting that these drawings are used to show rough dimensions of parts and are not in an finalized state that could be sent to a manufacturer.
 My specific contributions to this project were:
 <ul>
