@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Power Supply
-description: An ATX computer power supply converted to a desktop power supply.
+description: An ATX computer power supply converted to a desktop power supply. Personal Project
 img: assets/img/Power Supply/2.png
 importance: 1
 category: 
