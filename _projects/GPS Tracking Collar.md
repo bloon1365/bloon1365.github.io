@@ -5,9 +5,7 @@ description: A GPS tracking collar for bison. Team Project
 img: assets/img/Tracking Collar/1.jpg
 importance: 1
 category: 
- - Electrical
- - Mechanical
- - Software
+ - 
 ---
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>

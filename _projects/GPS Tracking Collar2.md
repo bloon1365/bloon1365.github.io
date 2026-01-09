@@ -2,7 +2,7 @@
 layout: page
 title: Bison GPS Tracking Collar
 description: Design and prototyping of a wallowing-resistant, self-releasing GPS tracking collar for long-term bison monitoring. Team Project
-img: assets/img/BisonTrack/1.png
+img: assets/img/Tracking Collar/16.png
 importance: 1
 category:
  - Electrical
@@ -89,17 +89,18 @@ Development was performed using evaluation hardware, with provisions added for f
 
 <h2>Mechanical Drop-Off Integration</h2>
 
-A servo-actuated seatbelt-style drop-off mechanism allows the collar to release automatically at end-of-life or under fault conditions.
+A servo-actuated, seatbelt-style drop-off mechanism was developed to allow the tracking collar to release automatically at end-of-life or under predefined fault conditions. Because the collar operates unattended for long durations and may be under significant mechanical load, the release mechanism had to be both electrically efficient and mechanically robust.
 
-The electronics interface had to:
+From an electronics and systems perspective, the drop-off integration imposed several strict requirements:
 
 <ul>
-  <li>Control the servo with zero idle current draw</li>
-  <li>Guarantee release even under high tensile load</li>
-  <li>Survive shock and vibration during actuation</li>
+  <li>Control the servo without any idle current draw during normal operation</li>
+  <li>Guarantee a successful release even while the collar is under high tensile load</li>
+  <li>Remain mechanically stable under shock, vibration, and environmental exposure</li>
 </ul>
 
-The initial design:
+Meeting these constraints required close coordination between mechanical design and electrical control. The servo is only powered during the release event, eliminating standby losses while still providing sufficient torque to disengage the locking mechanism when commanded.
+
 <div class="row">
   <div class="col-sm mt-3 mt-md-0">
     <figure class="figure">
@@ -107,13 +108,25 @@ The initial design:
         path="assets/img/Tracking Collar/12.png"
         class="img-fluid rounded z-depth-1" %}
       <figcaption class="figure-caption">
-        Figure 1: Initial Design
+        Figure 1: Initial drop-off mechanism concept
       </figcaption>
     </figure>
   </div>
 </div>
 
-Final Design:
+<div class="row">
+  <div class="col-sm mt-3 mt-md-0">
+    <figure class="figure">
+      {% include figure.html
+        path="assets/img/Tracking Collar/14.png"
+        class="img-fluid rounded z-depth-1" %}
+      <figcaption class="figure-caption">
+        Figure 2: 3D Printed Prototype
+      </figcaption>
+    </figure>
+  </div>
+</div>
+
 <div class="row">
   <div class="col-sm mt-3 mt-md-0">
     <figure class="figure">
@@ -121,18 +134,18 @@ Final Design:
         path="assets/img/Tracking Collar/4.png"
         class="img-fluid rounded z-depth-1" %}
       <figcaption class="figure-caption">
-        Figure 2: Final Design
+        Figure 3: Final drop-off mechanism design
       </figcaption>
     </figure>
   </div>
 </div>
+
+To validate the design before committing to a machined assembly, a 3D-printed prototype was produced and instrumented for functional testing. This allowed rapid iteration and early identification of mechanical weaknesses.
+
+Here is an example of the prototype functioning under load:
 {% include youtube.html id="j7zILJemzcw" %}
 
-
-Here is an example of a 3D printed prototype functioning:
-{% include youtube.html id="j7zILJemzcw" %}
-
-This prototype was tensile tested until failure. At 200lbs the locking pin sheared.
+The prototype was subsequently tensile tested to failure to characterize its load limits and identify failure modes. The locking mechanism failed at approximately 200 lbs of applied load, at which point the locking pin sheared.
 
 <div class="row">
   <div class="col-sm mt-3 mt-md-0">
@@ -141,31 +154,17 @@ This prototype was tensile tested until failure. At 200lbs the locking pin shear
         path="assets/img/Tracking Collar/6.jpg"
         class="img-fluid rounded z-depth-1" %}
       <figcaption class="figure-caption">
-        Figure 1: Locking Pin Failure
+        Figure 4: Locking pin failure during tensile testing
       </figcaption>
     </figure>
   </div>
 </div>
 
-This failure was due to the printed enclosure of the locking pins deflecting causing all the force to be concentrated on the end of the locking pin. More fasteners were added to reduce defection in this key location. This test gave us the confidence to go ahead and get an aluminum version made. 
+Post-failure analysis showed that the printed enclosure supporting the locking pins deflected under load, concentrating stress at the end of the pin rather than distributing it across the mechanism. This insight directly informed the next design revision, where additional fasteners and structural reinforcement were added to reduce enclosure deflection at this critical interface.
 
+Identifying this failure mode through controlled testing provided confidence in the revised geometry and justified transitioning the design to a machined aluminum version for the final assembly.
 
-
-Extensive testing was performed, including tensile loading, debris ingress, and impact testing.
-
-
-<h2>Difficulties and Lessons Learned</h2>
-
-This project encountered several non-trivial challenges that required iteration across mechanical design, electrical design, and system-level validation. Many of these issues only became apparent once hardware was built and tested under realistic conditions.
-
-
-<h3>Mechanical Failure of the Drop-Off Mechanism</h3>
-
-Early versions of the drop-off mechanism were 3D printed to allow for rapid iteration and mechanical testing. During tensile testing, we intentionally loaded the mechanism until failure to identify weak points in the design.
-
-This testing revealed a clear failure mode in the printed geometry, where stress concentrated at the locking interface and caused deformation prior to release. While this behavior was undesirable, it provided valuable insight into how forces were distributed through the mechanism.
-
-The results directly informed subsequent design revisions, including geometry changes and improved load paths. A video and still images document both the failure event and the post-failure condition of the part.
+The final assembly was tested to ~400lbs without failure. It also went through thorough impact testing
 
 
 
@@ -174,20 +173,53 @@ The results directly informed subsequent design revisions, including geometry ch
 
 Battery voltage monitoring proved more challenging than initially expected.
 
+Due to the battery voltages potentially being higher than the ADC range, a resistor divider was used to keep the voltage in range.
+
 To minimize quiescent current draw, the voltage divider resistors were chosen with very large values. While this reduced static power consumption, it introduced an unintended side effect: the ADC input impedance was not high enough to reliably sample the divided voltage.
 
 As a result, the ADC measurement node effectively floated, producing unstable and inaccurate readings that did not reflect the actual battery voltage.
 
-This issue highlighted a key tradeoff in low-power design: minimizing static current must be balanced against the electrical requirements of the measurement circuitry. In hindsight, a buffered measurement, switched divider, or lower-value resistors enabled only during sampling would have been a more robust solution.
+This issue highlighted a key trade off in low-power design: minimizing static current must be balanced against the electrical requirements of the measurement circuitry. In hindsight, a buffered measurement or a switched voltage divider would have been a more robust solution.
+
+
 
 
 <h3>Unexpected Current Consumption</h3>
 
-Measured current consumption differed from initial estimates based on component datasheets and simulations.
+Measured current consumption differed from initial estimates based on component datasheets and calculation.
 
 While average current draw met the long-term power budget, several transient behaviors significantly impacted energy usage, including wake-up current spikes, GPS acquisition behavior, and satellite transmission overhead.
 
 These effects are summarized in the project poster, which presents measured current draw across different operating modes. This experience reinforced the importance of real-world measurements over purely theoretical power models, especially for systems targeting multi-year lifespans.
+
+
+<h3>Unexpected Current Consumption</h3>
+
+Measured current consumption differed from initial estimates based on component datasheets and calculation.
+
+If the system had behaved as predicted, the projected battery life would have been significantly longer, or equivalently, the same operational lifetime could have been achieved with fewer batteries. Initial power models suggested that multi-year operation was feasible with a modest battery stack, assuming ultra-low idle current and short, well-bounded active periods.
+
+In practice, real-world measurements revealed several sources of excess energy consumption that were not captured by the initial estimates. While average current draw remained within the long-term budget, idle behaviors dominated total energy usage.
+
+Power consumption was characterized by measuring battery current directly over time and correlating it with system state. The resulting data showed that idle current alone was orders of magnitude higher than expected, eroding battery life far more than individual GPS or transmission events. This meant that even relatively infrequent wake-ups accumulated substantial energy loss over the course of a year.
+
+These effects are summarized in the project poster, which presents measured current draw across operating modes and highlights the gap between theoretical and measured performance. This experience reinforced the importance of validating power models with hardware measurements early in the design process, particularly for systems targeting multi-year lifespans where small inefficiencies compound into major lifetime reductions.
+
+<div class="row">
+  <div class="col-sm mt-3 mt-md-0">
+    <figure class="figure">
+      {% include figure.html
+        path="assets/img/Tracking Collar/15.png"
+        class="img-fluid rounded z-depth-1" %}
+      <figcaption class="figure-caption">
+        Figure 5: Current vs. Time
+      </figcaption>
+    </figure>
+  </div>
+</div>
+
+The current consumption shows idle current, microcontroller on and GPS on current. Due to supplier delays, we did not get a satellite transmission module in time to test.
+
 
 
 <h3>System Validation and Data Visualization</h3>
@@ -196,21 +228,24 @@ Beyond hardware functionality, validating the end-to-end system was a major chal
 
 Once GPS and satellite transmission were operational, data had to be decoded, stored, and interpreted in a meaningful way. To support this, we developed a simple web-based interface that displays received GPS points on a map.
 
-Seeing the final output — a continuous track of location data visualized geographically — was a critical milestone. It confirmed not only that individual subsystems worked, but that the full pipeline from sensor acquisition to user-facing data presentation was functional.
+Seeing the final output of a continuous track of location data visualized geographically was a critical milestone. It confirmed not only that individual subsystems worked, but that the full pipeline from sensor acquisition to user-facing data presentation was functional.
 
 Images of the final map output and the data visualization interface are included to demonstrate this end result.
 
+<div class="row">
+  <div class="col-sm mt-3 mt-md-0">
+    <figure class="figure">
+      {% include figure.html
+        path="assets/img/Tracking Collar/13.png"
+        class="img-fluid rounded z-depth-1" %}
+      <figcaption class="figure-caption">
+        Figure 6: Collected Data on Map
+      </figcaption>
+    </figure>
+  </div>
+</div>
 
-<h3>Key Takeaways</h3>
-
-<ul>
-  <li>Mechanical testing to failure provides actionable design insight that simulations alone cannot</li>
-  <li>Ultra-low-power design requires careful consideration of analog measurement limitations</li>
-  <li>Datasheet-based power estimates must be validated with real hardware measurements</li>
-  <li>End-to-end validation, including data visualization, is essential for proving system readiness</li>
-</ul>
-
-
+Extensive testing was done by hiking with the collar and checking to make sure the data was valid.
 
 
 
@@ -225,22 +260,24 @@ The final prototype demonstrated:
   <li>Mechanical resilience to impact, dirt, and water exposure</li>
 </ul>
 
-The design met all core functional requirements and established a solid foundation for future production refinement.
-
-
-<h2>What This Project Demonstrates</h2>
-
-<ul>
-  <li>End-to-end embedded system design</li>
-  <li>Low-power firmware development under real constraints</li>
-  <li>Hardware bring-up and debugging</li>
-  <li>Cross-disciplinary integration of mechanical, electrical, and software systems</li>
-  <li>Engineering decision-making driven by field realities rather than ideal assumptions</li>
-</ul>
-
 
 <h2>Documentation</h2>
 
 <p>
-Full technical documentation is available in the final capstone report and user manual.
+A more in depth report on the process and analysis of of results is avalible in the <a href="/assets/pdf/Bison Tracking Collar/MSE 411 Final Report - REDACTED.pdf" download>final capstone report</a> and <a href="/assets/pdf/Bison Tracking Collar/MSE 411 User Manual - REDACTED.pdf" download>user manual</a>
 </p>
+
+
+
+<div class="row">
+  <div class="col-sm mt-3 mt-md-0">
+    <figure class="figure">
+      {% include figure.html
+        path="assets/img/Tracking Collar/17.png"
+        class="img-fluid rounded z-depth-1" %}
+      <figcaption class="figure-caption">
+        Figure 7: Poster
+      </figcaption>
+    </figure>
+  </div>
+</div>
