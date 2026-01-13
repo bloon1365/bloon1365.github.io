@@ -340,7 +340,7 @@ A more in depth report on the process and analysis of of results is avalible in 
         path="assets/img/Tracking Collar/17.png"
         class="img-fluid rounded z-depth-1" %}
       <figcaption class="figure-caption">
-        Figure 7: Poster
+        Figure 10: Poster
       </figcaption>
     </figure>
   </div>
