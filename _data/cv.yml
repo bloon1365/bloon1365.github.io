@@ -3,27 +3,36 @@
   contents:
     - title: Undergraduate
       institution: Simon Fraser University
-      year: 2021 - Present
+      year: 2021 - 2026
       description:
         - title: Mechatronic Systems Engineering
           contents:
-            - Cumulative Grade Point Average - 3.70
+            - Cumulative Grade Point Average - 3.72
+
 - title: Experience
   type: time_table
   contents:
+    - title: Embedded Systems Engineer
+      institution: Dometic
+      year: 2025 - 2025
+      description:
+        - Updated low-level timer implementation, improving timing accuracy and code maintainability.
+        - Built HIL testing framework integrating physical hardware with simulated ECUs; implemented CAN message spoofing to emulate network traffic and validate firmware behavior under realistic system conditions.
+        - Wrote and maintained device drivers; supported multiple hardware revisions with no code duplication.
+        - Performed root-cause analysis on motor driver failure; identified MOSFET shoot-through caused by gate coupling between high-side and low-side devices, leading to thermal failure and board damage.
     - title: Service Engineer
       institution: Ballard Power System Inc.
-      year: 2023 - Present
+      year: 2023 - 2026
       description:
         - Authored comprehensive fuel cell maintenance manuals to streamline operational procedures and ensure adherence to industry standards.
         - Pioneered the development of innovative maintenance procedures, enhancing efficiency and prolonging equipment lifespan.
         - Implemented predictive maintenance techniques, leveraging data analysis to preemptively identify and address potential issues, resulting in reduced downtime and cost savings.
         - Contributed to the refurbishment of components by providing technical expertise and support, optimising performance and extending the life cycle of critical equipment.
 
+
 - title: Honors and Awards
   type: time_table
   contents:
-    - title: Black Belt in Taekwondo
     - title: Putris Bursary in Applied Science
     - title: SFU Open Bursary Winner 
     - title: Undergrad Open Bursary Winner
