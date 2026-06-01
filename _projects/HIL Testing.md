@@ -9,7 +9,6 @@ category:
 related_publications:
 ---
 
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <h2>Project Overview</h2> This project involved the design and implementation of a Hardware-in-the-Loop (HIL) testing framework for a marine gyroscopic stabilizer under active development at Dometic Marine. The goal was to create a repeatable, reliable way to validate safety-critical firmware directly on a fully assembled gyro unit, keeping pace with rapid software changes while reducing regressions and manual testing overhead.

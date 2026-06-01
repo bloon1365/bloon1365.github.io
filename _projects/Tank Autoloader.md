@@ -7,8 +7,6 @@ importance: 4
 category: Mechanical
 ---
 
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-
 
 <h2>Designing a Next-Generation Tank Autoloader System</h2>
 

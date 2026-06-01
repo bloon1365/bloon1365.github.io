@@ -8,7 +8,6 @@ category: Software
 related_publications:
 ---
 
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 For a final project a professor challenged us to design a two-dimensional, two degree of freedom robotic arm that would allow for automated machining of precise shapes. Namely two letters of the alphabet must be chosen and placed within the quadrants surrounding the first joint (Figure 1). For these letters a path must be chosen and all kinematics and kinetics of both arms must be graphed. 
